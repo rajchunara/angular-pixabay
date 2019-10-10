@@ -1,3 +1,4 @@
+import { ImageService } from './../../services/image-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+   topic:string="";
 
-  constructor() { }
+  
+
+  constructor(private imgService: ImageService) { }
 
   ngOnInit() {
+    this.imgService.currentSidebarTopic.subscribe(res => {this.topic= res});
+  }
+
+  searchImagesByName($event){
+    // console.log($event); 
+    // this.imgService.getImagesByName($event);
+    this.imgService.setSidebarTopic($event);
   }
 
 }

@@ -3,9 +3,9 @@
     <ul class="collection container">
         <li *ngFor="let image of images" class="collection-item avatar">
             <img src="{{image.userImageURL}}" alt="" class="circle">
-            <span class="title">{{image.user}}</span>
-            <p>First Line <br>
-                Second Line
+            <span class="title">Name: {{image.user}}</span>
+            <p>User-ID: {{image.user_id}} <br>
+                User Details
             </p>
         </li>
     </ul>

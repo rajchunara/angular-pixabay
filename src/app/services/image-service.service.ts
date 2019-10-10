@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +8,14 @@ import { Observable } from 'rxjs';
 
 export class ImageService {
     searchText:string='';
-    amount:number=15;
+    amount:number=16;
     apiUrl:string='https://pixabay.com/api';
     apiKey:string='10235189-f5b0b900563689e4a004e7a81';
     images;
+
+    sidebarImage:string='';
+    private sidebarTopic = new BehaviorSubject<string>("");
+    currentSidebarTopic = this.sidebarTopic.asObservable();
 
   constructor(private http: HttpClient) { }
 
@@ -26,6 +30,25 @@ export class ImageService {
     &image_type=photo&per_page=${this.amount}&safesearch=true`);
     return this.images;
   }
+
+  setSidebarTopic(topic: string){
+    this.sidebarTopic.next(topic);
+  }
+
+  
+
+  setSidebarImage(sidebarImage){
+    
+    this.sidebarImage = sidebarImage;
+    console.log(this.sidebarImage);
+  }
+
+  
+
+  getSidebarImage():string{
+    return this.sidebarImage;
+  }
+
 
   
 }

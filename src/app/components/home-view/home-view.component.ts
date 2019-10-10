@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+
 import { ImageService } from './../../services/image-service.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -17,14 +17,11 @@ export class HomeViewComponent implements OnInit {
   }
 
   getImagesByName(imageName){
-    console.log(imageName);
     this.imgService.getImagesByName(imageName)
       .subscribe(res =>{
         this.images = res.hits;
         console.log(res.hits);        
       })
   }
-
-
 
 }
