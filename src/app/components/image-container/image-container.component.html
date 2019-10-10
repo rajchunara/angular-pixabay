@@ -1,0 +1,24 @@
+<div class="col s10"> 
+                 
+    <div 
+    *ngFor="let image of images"   
+    class="card1"
+    >
+        <a href="#img-{{image.id}}" class="modal-trigger card1">
+        <div  [className]="'modal-trigger img'+image.id"
+        [style.background-image]="'url('+image.largeImageURL+')'"
+        >            
+        </div>
+        </a>
+
+        <div class="modal" id="img-{{image.id}}">
+            <img src="{{image.largeImageURL}}" alt="">
+        </div>
+    
+    
+    </div>       
+
+    <a href="#terms" class="btn orange modal-trigger">Terms</a>
+
+    <div class="modal" id="terms" (click)="onModalClick($event)">terms and conditons</div>
+</div>

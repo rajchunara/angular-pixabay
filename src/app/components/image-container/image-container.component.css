@@ -1,0 +1,19 @@
+.card1{
+    height:350px;
+    width: 290px;
+    display: inline-block;
+    margin:10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.modal-trigger{
+    height:350px;
+    width: 290px;
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}

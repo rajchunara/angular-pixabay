@@ -1,8 +1,13 @@
+import { UserViewComponent } from './components/user-view/user-view.component';
+import { HomeViewComponent } from './components/home-view/home-view.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:"", component:HomeViewComponent},
+  {path:"users", component:UserViewComponent}, 
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
