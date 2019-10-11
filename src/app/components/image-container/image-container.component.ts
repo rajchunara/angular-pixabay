@@ -1,6 +1,7 @@
 import { ImageService } from './../../services/image-service.service';
 import { Component, OnInit, ElementRef, Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-image-container',
   templateUrl: './image-container.component.html',
@@ -28,6 +29,8 @@ export class ImageContainerComponent implements OnInit {
         console.log(res1.hits);        
       });
     });
+
+
   }
 
 

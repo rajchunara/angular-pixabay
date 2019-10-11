@@ -4,31 +4,33 @@
     *ngFor="let image of images"   
     class="card1"
     >
-        <a href="#img-{{image.id}}" class="modal-trigger card1">
-        <div  [className]="'modal-trigger img'+image.id"
-        [style.background-image]="'url('+image.largeImageURL+')'"
-        >            
-        </div>
-        </a>
+  
+        <img  [className]="'modal-trigger img'+image.id"
+          src={{image.largeImageURL}}  class="materialboxed"/>        
+        <div class="bottom-info ">
+          <div class="valign-wrapper">
+            <div class="likes left-align">
+                <i class="material-icons like" >favorite</i>
+              <p class="like-text">{{image.likes}} Likes</p>
+            </div>
+          </div>
 
-        <div class="modal" id="img-{{image.id}}">
-            <img src="{{image.largeImageURL}}" alt="">
+          <div class="user right-align">            
+            <img class="user-image" src={{image.userImageURL}} alt="">
+            <div class="user-name">{{image.user}}</div>
+          </div>
+        
+
         </div>
+        
+
+        <!-- <div class="modal" id="img-{{image.id}}">
+            <img src="{{image.largeImageURL}}" alt="">
+        </div> -->
     
     
     </div>  
     
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-      <div class="modal-content">
-        <h4>Modal Header</h4>
-        <p>A bunch of text</p>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-      </div>
-    </div>
+    
 
 </div>
