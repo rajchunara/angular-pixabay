@@ -1,0 +1,17 @@
+.image-dialog{
+    height: 600 px !important;
+    width: 500 px !important;
+}
+
+.mat-dialog-content{
+    width: 750px;
+    height: 600px;
+
+}
+
+img{
+    display:block;
+    max-width: 100%;
+    max-height: 100%;
+    
+}

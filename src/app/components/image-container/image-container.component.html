@@ -5,8 +5,9 @@
     class="card1"
     >
   
-        <img  [className]="'modal-trigger img'+image.id"
-          src={{image.largeImageURL}}  class="materialboxed"/>        
+        <img  [className]="'modal-trigger img'+image.id" (click)="openDialog(image.largeImageURL)"
+          src={{image.largeImageURL}}  class="materialboxed"/>  
+
         <div class="bottom-info ">
           <div class="valign-wrapper">
             <div class="likes left-align">
@@ -19,8 +20,6 @@
             <img class="user-image" src={{image.userImageURL}} alt="">
             <div class="user-name">{{image.user}}</div>
           </div>
-        
-
         </div>
         
 

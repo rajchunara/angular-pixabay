@@ -1,3 +1,4 @@
+import { MaterialModule } from './material/material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,7 +10,9 @@ import { ImageContainerComponent } from './components/image-container/image-cont
 import { HomeViewComponent } from './components/home-view/home-view.component';
 import { ImageCardComponent } from './components/image-card/image-card.component';
 import { UserViewComponent } from './components/user-view/user-view.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ImageDialogComponent } from './image-dialog/image-dialog.component';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +20,16 @@ import { UserViewComponent } from './components/user-view/user-view.component';
     ImageContainerComponent,
     HomeViewComponent,
     ImageCardComponent,
-    UserViewComponent
+    UserViewComponent,
+    ImageDialogComponent
   ],
+  entryComponents:[ImageDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule  
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

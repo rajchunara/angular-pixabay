@@ -1,5 +1,8 @@
+import { ImageDialogComponent } from './../../image-dialog/image-dialog.component';
 import { ImageService } from './../../services/image-service.service';
 import { Component, OnInit, ElementRef, Input } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { Overlay } from '@angular/cdk/overlay';
 
 
 @Component({
@@ -14,9 +17,10 @@ export class ImageContainerComponent implements OnInit {
   @Input()
   images=[];
 
- 
+  constructor(private imgService: ImageService, private el: ElementRef, public dialog: MatDialog,private overlay: Overlay) { 
 
-  constructor(private imgService: ImageService, private el: ElementRef) { }
+  
+  }
 
 
   ngOnInit() {
@@ -40,9 +44,12 @@ export class ImageContainerComponent implements OnInit {
     .subscribe(res => {this.images = res.hits;
     console.log(res);
     console.log("getImages" , this.topic);
-    });    
+    });       
+  }
 
-    
+  openDialog(imageURL){
+    this.dialog.open(ImageDialogComponent, {data:{imageURL: imageURL}, scrollStrategy: this.overlay.scrollStrategies.noop()});
+    console.log(imageURL)
   }
 
 }
