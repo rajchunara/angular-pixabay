@@ -17,9 +17,10 @@ export class ImageContainerComponent implements OnInit {
   @Input()
   images=[];
 
-  constructor(private imgService: ImageService, private el: ElementRef, public dialog: MatDialog,private overlay: Overlay) { 
-
-  
+  constructor(private imgService: ImageService,
+     private el: ElementRef,
+     public dialog: MatDialog,
+     private overlay: Overlay) {   
   }
 
 
@@ -33,8 +34,6 @@ export class ImageContainerComponent implements OnInit {
         console.log(res1.hits);        
       });
     });
-
-
   }
 
 
@@ -51,6 +50,15 @@ export class ImageContainerComponent implements OnInit {
     this.dialog.open(ImageDialogComponent, {data:{imageURL: imageURL}, scrollStrategy: this.overlay.scrollStrategies.noop()});
     console.log(imageURL)
   }
+
+  getNextImages(){
+    this.imgService.getNextImages()
+      .subscribe(res=>{
+        this.images=[...this.images,...res.hits, ];
+        console.log(this.images);
+      })
+  }
+
 
 }
 
