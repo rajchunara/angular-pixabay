@@ -27,3 +27,9 @@ h5{
     cursor: pointer;
     background: rgb(184, 204, 209);
 }
+
+@media(max-width:1000px){
+    .sidebar{
+        display:none;
+    }
+}

@@ -16,4 +16,8 @@ export class LoginFormComponent implements OnInit {
     console.log(firstname); 
   }
 
+  onSubmit(user){
+    console.log(user);
+  }
+
 }

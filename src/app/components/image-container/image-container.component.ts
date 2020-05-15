@@ -31,31 +31,28 @@ export class ImageContainerComponent implements OnInit {
       this.imgService.getImagesByName(res)
         .subscribe(res1 =>{
         this.images = res1.hits;
-        console.log(res1.hits);        
+     
       });
     });
   }
 
 
   getImages(){
-    console.log("image container");
     this.imgService.getImagesService()
     .subscribe(res => {this.images = res.hits;
-    console.log(res);
-    console.log("getImages" , this.topic);
     });       
   }
 
   openDialog(imageURL){
     this.dialog.open(ImageDialogComponent, {data:{imageURL: imageURL}, scrollStrategy: this.overlay.scrollStrategies.noop()});
-    console.log(imageURL)
+    
   }
 
   getNextImages(){
     this.imgService.getNextImages()
       .subscribe(res=>{
         this.images=[...this.images,...res.hits, ];
-        console.log(this.images);
+        
       })
   }
 

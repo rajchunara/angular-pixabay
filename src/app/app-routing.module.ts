@@ -7,8 +7,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path:"", component:HomeViewComponent},
-  {path:"users", component:UserViewComponent}, 
-  {path:"login", component:LoginFormComponent}, 
+  {path:"users", component:UserViewComponent, data:{animation:'isRight'}}, 
+  {path:"login", component:LoginFormComponent, data:{animation:'isRight'}}, 
 ];
 
 @NgModule({

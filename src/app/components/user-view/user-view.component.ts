@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class UserViewComponent implements OnInit {
   images=[];
+  usersMap:Map<string, string>= new Map<string,string>();
   users:IUser[]=[];
   userName=[];
   userURL=[];
@@ -43,18 +44,17 @@ export class UserViewComponent implements OnInit {
         name:images[i].user,
         userImageURL:images[i].userImageURL
       }
-
-      this.users.push(this.user);
-     
-
+      //We are pushing user name as key and image url as value in Map
+      //If user name is repeated then it will not be pushed to Map as user.name is key
+      //and keys do not repeat in Map
+      this.usersMap.set(this.user.name, this.user.userImageURL);
     }
 
-    console.log(this.users);
+    this.usersMap.forEach((key, value)=>{
+      this.users.push({name:value, userImageURL:key});
+    })
 
-    this.users = [...new Set(this.users)];
-    console.log("SET");
-    console.log(this.users);
-    
+    this.usersMap.clear();
   } 
 }
 

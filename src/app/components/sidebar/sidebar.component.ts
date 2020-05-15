@@ -18,8 +18,6 @@ export class SidebarComponent implements OnInit {
   }
 
   searchImagesByName($event){
-    // console.log($event); 
-    // this.imgService.getImagesByName($event);
     this.imgService.setSidebarTopic($event);
   }
 

@@ -18,3 +18,7 @@ img{
 .right-align{
     float: right;
 }
+
+.close-dialog{
+    color: white;
+}
